@@ -1,14 +1,7 @@
-/*
- * particle_filter.h
- *
- * 2D particle filter class.
- *  Created on: Dec 12, 2016
- *      Author: Tiffany Huang
- */
-
 #ifndef PARTICLE_FILTER_H_
 #define PARTICLE_FILTER_H_
 
+#include <random>
 #include "helper_functions.h"
 
 struct Particle {
@@ -114,6 +107,11 @@ public:
 	const bool initialized() const {
 		return is_initialized;
 	}
+
+	/**
+	 * random number engine for generating random Gaussian noise.
+	 */
+	std::default_random_engine gen;
 };
 
 
